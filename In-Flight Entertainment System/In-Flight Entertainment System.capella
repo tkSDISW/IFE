@@ -19,9 +19,13 @@
     xmlns:org.polarsys.capella.core.data.pa="http://www.polarsys.org/capella/core/pa/5.0.0"
     xmlns:org.polarsys.capella.core.data.pa.deployment="http://www.polarsys.org/capella/core/pa/deployment/5.0.0"
     xmlns:org.polarsys.capella.core.data.requirement="http://www.polarsys.org/capella/core/requirement/5.0.0"
-    xmlns:re="http://www.polarsys.org/capella/common/re/5.0.0" id="bd182435-e290-42ce-b99f-6dd06e7ae7c7"
+    xmlns:re="http://www.polarsys.org/capella/common/re/5.0.0" xmlns:smw="http://www.obeo.fr/capella/smw"
+    id="bd182435-e290-42ce-b99f-6dd06e7ae7c7"
     name="In-Flight Entertainment System" summary="Version 1.0">
   <ownedExtensions xsi:type="libraries:ModelInformation" id="7197cfa8-b8fb-4ea3-b38f-f6fcd961dee8"/>
+  <ownedExtensions xsi:type="smw:TcRflpGraph" id="815502a9-53a8-4467-9df6-e86318f1dba1"
+      tcuid="RNqJ9rXJ4nxmPD" stableTcId="BtqJ9rXJ4nxmPD" itemId="064653" revisionId="A"
+      ancestor="{&#xA;  &quot;nodes&quot;: [&#xA;    {&#xA;      &quot;projectID&quot;: &quot;bd182435-e290-42ce-b99f-6dd06e7ae7c7&quot;,&#xA;      &quot;properties&quot;: {&#xA;        &quot;type&quot;: &quot;Project&quot;,&#xA;        &quot;userSpecificInput:isTopContainer&quot;: &quot;true&quot;,&#xA;        &quot;userSpecificInput:CHECKOUT&quot;: &quot;true&quot;,&#xA;        &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;        &quot;ItemID&quot;: &quot;064653&quot;&#xA;      },&#xA;      &quot;umlID&quot;: &quot;bd182435-e290-42ce-b99f-6dd06e7ae7c7&quot;,&#xA;      &quot;plmPk&quot;: {&#xA;        &quot;tcuid&quot;: &quot;RNqJ9rXJ4nxmPD&quot;,&#xA;        &quot;stableTcId&quot;: &quot;BtqJ9rXJ4nxmPD&quot;&#xA;      }&#xA;    }&#xA;  ],&#xA;  &quot;edges&quot;: []&#xA;}"/>
   <ownedEnumerationPropertyTypes xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyType"
       id="03ec0c8d-bda5-4bdf-ae09-e0680b116a1d" name="ProgressStatus">
     <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
@@ -175,6 +179,22 @@
             name="INHERITANCY_REUSE"/>
       </ownedCompliancyDefinitionPkg>
     </ownedExtensions>
+    <ownedPropertyValuePkgs xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValuePkg"
+        id="874cdb22-d09b-49d3-91a2-85294b88f868" name="SMW Properties">
+      <ownedEnumerationPropertyTypes xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyType"
+          id="f8468abd-b171-4cf7-bb2e-6ef81fb97a99" name="SMW_SYNC_STATUS">
+        <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyValue"
+            id="89a71f29-d27c-458e-849a-e480308ca3c3" name="SYNC" type="#f8468abd-b171-4cf7-bb2e-6ef81fb97a99"
+            value="#3a2e4a37-d991-4673-bb8f-191d1e97de86"/>
+        <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyValue"
+            id="f0aa6d36-c768-4bd9-942f-6f63ca73abd0" name="SYNC_DEEP" type="#f8468abd-b171-4cf7-bb2e-6ef81fb97a99"
+            value="#c0af3222-e4f1-4424-a501-d3283e6fea5b"/>
+        <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+            id="3a2e4a37-d991-4673-bb8f-191d1e97de86" name="SYNC"/>
+        <ownedLiterals xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyLiteral"
+            id="c0af3222-e4f1-4424-a501-d3283e6fea5b" name="SYNC_DEEP"/>
+      </ownedEnumerationPropertyTypes>
+    </ownedPropertyValuePkgs>
     <ownedArchitectures xsi:type="org.polarsys.capella.core.data.oa:OperationalAnalysis"
         id="e12de7af-bf77-4c43-9f7c-03404be33a29" name="Operational Analysis">
       <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalActivityPkg"
@@ -10250,7 +10270,8 @@
             id="a8e67c5e-c76a-4a19-82ad-aa08fed7c860" name="Passenger Service Selection"
             exchanges="#e207d8b6-c76d-494d-9519-b7f0cac18956 #a91fa283-42a3-4415-9274-9d09244ab3e6"/>
         <ownedPhysicalFunctions xsi:type="org.polarsys.capella.core.data.pa:PhysicalFunction"
-            id="0f09b41e-1e38-4d34-abb0-ba31a0eedd58" name="Root Physical Function">
+            id="0f09b41e-1e38-4d34-abb0-ba31a0eedd58" name="Root Physical Function"
+            appliedPropertyValues="#f0aa6d36-c768-4bd9-942f-6f63ca73abd0">
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.pa:PhysicalFunction"
               id="e22a5c1a-1ee1-4bc4-8b34-b843f4bcf116" name="Perform Cabin Management Activities"
               description="This function is a high-level function gathering all the what is performed by the ground operator actor.">
@@ -14242,7 +14263,8 @@
             id="a912b5c2-30ad-4f8d-b61a-c2e0950ab7cd" name="Displayed Elements" source="#0f3c342b-3b6e-47ec-a457-0b53364dd844"
             target="#b837cd91-9cb0-44b7-96eb-8144d0dd5e82" kind="FLOW"/>
         <ownedPhysicalComponents xsi:type="org.polarsys.capella.core.data.pa:PhysicalComponent"
-            id="5158c762-8f3c-4947-98f4-4cf085492bf5" name="IFE System">
+            id="5158c762-8f3c-4947-98f4-4cf085492bf5" appliedPropertyValues="#89a71f29-d27c-458e-849a-e480308ca3c3"
+            name="IFE System">
           <ownedTraces xsi:type="org.polarsys.capella.core.data.capellacommon:TransfoLink"
               id="fe8df4cc-5b78-48b9-ab7b-66ecabf692c1" targetElement="#cf3ac4f5-1764-4d57-a4af-216a6c9577a1"
               sourceElement="#f3fc69a5-507d-43c5-a4a1-4a5fd9e6b347"/>
@@ -14327,8 +14349,8 @@
           <ownedPhysicalLinks xsi:type="org.polarsys.capella.core.data.cs:PhysicalLink"
               id="40849d2f-1ebc-4bde-8d83-065004bdc7f5" name="Gigabit Ethernet" linkEnds="#6631f440-3a9b-48ba-8e5d-f0f70dcbeaa5 #b383a439-0b94-4639-acdb-45ea7400a14b"/>
           <ownedPhysicalComponents xsi:type="org.polarsys.capella.core.data.pa:PhysicalComponent"
-              id="5da29b86-88bd-4ced-9992-031690f87f99" name="IMPLEMENTATION PCs"
-              nature="NODE">
+              id="5da29b86-88bd-4ced-9992-031690f87f99" appliedPropertyValues="#f0aa6d36-c768-4bd9-942f-6f63ca73abd0"
+              name="IMPLEMENTATION PCs" nature="NODE">
             <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="b6ba930f-90f5-4805-b54c-f3c48e32b0b0"
                 name="Video Server Unit" abstractType="#a850426c-c425-4c85-85fa-cd85b0c066e5"/>
             <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="cfba64e6-4385-4eb3-950f-723ed69347b9"
@@ -14659,7 +14681,8 @@
             </ownedPhysicalComponents>
           </ownedPhysicalComponents>
           <ownedPhysicalComponents xsi:type="org.polarsys.capella.core.data.pa:PhysicalComponent"
-              id="c8114705-19fa-41b3-b534-a342f70c2e51" name="BEHAVIOURAL PCs" kind="SOFTWARE">
+              id="c8114705-19fa-41b3-b534-a342f70c2e51" appliedPropertyValues="#f0aa6d36-c768-4bd9-942f-6f63ca73abd0"
+              name="BEHAVIOURAL PCs" kind="SOFTWARE">
             <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
                 id="e501590f-c85d-4cad-9a7c-1ecce7015320" name="Media Data Requests"
                 source="#916bbd6b-2cdb-46eb-8b2e-f66bcdf05eb0" target="#424333b7-e718-447a-974f-9b399e82a98e"
